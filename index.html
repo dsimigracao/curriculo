@@ -1,149 +1,192 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
 <head>
-
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-X22HFDYW98"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-X22HFDYW98');
-</script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EB2-NIW Curriculum Creator</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Visto Americano B1/B2 Aprovado — Guia Prático</title>
+  <meta name="description" content="Guia prático para preparar DS-160, organizar provas e treinar respostas curtas para a entrevista do visto B1/B2." />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap');
-    
-    body {
-      font-family: 'Titillium Web', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #191919;
-      color: #F1F1F1;
+    :root{
+      --bg:#0b0f14; --card:#111827; --muted:#9ca3af; --text:#f9fafb;
+      --accent:#22c55e; --accent2:#38bdf8; --border:#1f2937;
     }
-    header {
-      background: #191919;
-      color: #A08654;
-      padding: 80px 20px;
-      text-align: center;
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
+      background:linear-gradient(180deg,#0b0f14 0%, #0a1220 100%); color:var(--text); }
+    a{color:inherit}
+    .wrap{max-width:980px;margin:0 auto;padding:24px}
+    .pill{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border:1px solid var(--border);
+      border-radius:999px;color:var(--muted);font-size:14px}
+    .grid{display:grid;gap:16px}
+    .hero{padding:28px 0 10px}
+    h1{font-size:42px;line-height:1.08;margin:14px 0 10px}
+    .sub{font-size:18px;line-height:1.5;color:var(--muted);max-width:820px}
+    .ctaRow{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0 6px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:14px 18px;border-radius:14px;border:1px solid var(--border);text-decoration:none;font-weight:700}
+    .btnPrimary{background:linear-gradient(90deg,var(--accent) 0%, #16a34a 100%);color:#04110a;border:none}
+    .btnGhost{background:transparent;color:var(--text)}
+    .note{color:var(--muted);font-size:13px;margin-top:8px}
+    .cards{grid-template-columns:repeat(12,1fr);margin-top:18px}
+    .card{background:rgba(17,24,39,.72);border:1px solid var(--border);border-radius:18px;padding:18px}
+    .span6{grid-column:span 6}
+    .span12{grid-column:span 12}
+    @media (max-width:820px){ h1{font-size:34px} .span6{grid-column:span 12} }
+    .kicker{color:var(--accent2);font-weight:700;letter-spacing:.2px}
+    ul{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+    li{margin:8px 0}
+    h2{margin:0 0 10px;font-size:22px}
+    .divider{height:1px;background:var(--border);margin:22px 0}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--border);color:var(--muted);font-size:13px}
+    .stickyBar{
+      position:fixed;left:0;right:0;bottom:0;background:rgba(11,15,20,.92);
+      border-top:1px solid var(--border);backdrop-filter: blur(10px);
     }
-    header h1 {
-      margin: 0;
-      font-size: 3.2em;
-      font-weight: 700;
+    .stickyInner{max-width:980px;margin:0 auto;padding:12px 16px;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .price{font-weight:800}
+    .small{font-size:13px;color:var(--muted)}
+    .whats{
+      position:fixed;right:18px;bottom:86px;z-index:10;
+      background:linear-gradient(90deg,#22c55e 0%, #16a34a 100%);
+      color:#04110a;border:none;border-radius:999px;padding:12px 14px;font-weight:800;text-decoration:none;
+      box-shadow:0 10px 24px rgba(0,0,0,.35);
     }
-    header p {
-      font-size: 1.5em;
-      margin-top: 15px;
-    }
-    .btn-primary {
-      background: #A08654;
-      color: #191919;
-      padding: 18px 35px;
-      font-size: 1.5em;
-      border: none;
-      border-radius: 8px;
-      text-decoration: none;
-      margin-top: 30px;
-      display: inline-block;
-      font-weight: bold;
-    }
-    section {
-      padding: 50px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .benefits, .how, .testimonials, .offer, .footer {
-      background: #222;
-      border-radius: 10px;
-      padding: 40px;
-      margin-bottom: 25px;
-    }
-    h2 {
-      color: #A08654;
-      font-size: 2.2em;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      font-size: 1.3em;
-      line-height: 1.6em;
-    }
-    ul li::before {
-      content: "✔ ";
-      color: #A08654;
-      font-size: 1.3em;
-    }
-    .footer {
-      text-align: center;
-      font-size: 1.1em;
-      color: #F1F1F1;
-    }
-    .social-icons a {
-      margin: 0 15px;
-      color: #A08654;
-      text-decoration: none;
-      font-size: 2.5em;
-    }
-    .footer a {
-      color: #A08654;
-      text-decoration: none;
-    }
-    .footer a:hover {
-      text-decoration: underline;
-    }
+    .faq details{background:rgba(17,24,39,.55);border:1px solid var(--border);border-radius:14px;padding:14px;margin:10px 0}
+    .faq summary{cursor:pointer;font-weight:800}
+    .faq p{color:var(--muted);margin:10px 0 0;line-height:1.55}
+    .footer{color:var(--muted);font-size:12px;line-height:1.5;margin:26px 0 80px}
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>EB2-NIW CURRICULUM CREATOR</h1>
-    <p>O melhor criador de currículo do mundo, agora por apenas R$19,99</p>
-    <a class="btn-primary" href="https://pay.kiwify.com.br/lj1kCvH" target="_blank">COMPRAR AGORA</a>
-  </header>
 
-  <section class="benefits">
-    <h2>✅ Benefícios</h2>
-    <ul>
-      <li>Currículo com estrutura ideal para o EB2-NIW</li>
-      <li>Alinhado com os critérios do USCIS</li>
-      <li>Simples de usar e 100% editável</li>
-      <li>Criado por advogado especialista em imigração</li>
-    </ul>
-  </section>
+  <a class="whats" href="https://wa.me/5515930510507?text=Oi%20Diego!%20Quero%20tirar%20uma%20d%C3%BAvida%20sobre%20o%20ebook%20B1/B2." target="_blank" rel="noopener">
+    Falar no WhatsApp
+  </a>
 
-  <section class="how">
-    <h2>📌 Como Funciona</h2>
-    <ul>
-      <li>Você responde um formulário com suas informações profissionais</li>
-      <li>Nosso sistema gera automaticamente seu currículo ideal</li>
-      <li>Você recebe o arquivo pronto para revisão e uso</li>
-    </ul>
-  </section>
+  <div class="wrap">
+    <div class="hero">
+      <span class="pill">📌 Ebook • B1/B2 • Método prático (sem enrolação)</span>
+      <h1>Visto Americano B1/B2 Aprovado:<br/>o guia prático para evitar erros e aumentar suas chances na entrevista</h1>
+      <p class="sub">
+        Como se preparar corretamente, preencher o <strong>DS-160</strong> sem contradições e demonstrar <strong>vínculo real com o Brasil</strong> — mesmo sendo sua primeira vez.
+      </p>
 
-  <section class="testimonials">
-    <h2>💬 Depoimentos Reais</h2>
-    <p style="font-size:1.2em">“Consegui a aprovação com um currículo impecável graças ao EB2-NIW Curriculum Creator. Simplesmente genial!”<br><strong>— Carla M., Engenheira Química</strong></p>
-    <p style="font-size:1.2em">“Não tinha ideia de como estruturar meu currículo. Esse criador salvou meu processo.”<br><strong>— João V., Cientista de Dados</strong></p>
-  </section>
-
-  <section class="offer">
-    <h2>🎁 Oferta Exclusiva</h2>
-    <p style="font-size:1.4em"><strong>Apenas R$19,99</strong> por tempo limitado.<br>Inclui acesso vitalício e atualizações futuras gratuitas.</p>
-    <a class="btn-primary" href="https://pay.kiwify.com.br/lj1kCvH" target="_blank">GARANTIR MEU ACESSO</a>
-  </section>
-
-  <section class="footer">
-    <div class="social-icons">
-      <a href="https://www.instagram.com/diegosanches.adv.br/" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://wa.me/5511930510507" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <div class="ctaRow">
+        <a class="btn btnPrimary" href="SEU_LINK_CHECKOUT_KIWIFY_AQUI" target="_blank" rel="noopener">Quero o guia agora</a>
+        <a class="btn btnGhost" href="#conteudo">Ver o que tem dentro</a>
+      </div>
+      <p class="note">
+        ⚠️ Material educacional. A decisão final é do oficial consular. Este guia foca em clareza, consistência e execução (DS-160 + provas + entrevista).
+      </p>
     </div>
-    <p>📧 Contato: <a href="mailto:diego@diegosanches.adv.br">diego@diegosanches.adv.br</a><br>
-       📱 WhatsApp: <a href="https://wa.me/5511930510507" target="_blank">+55 11 93051-0507</a></p>
-    <p>© 2025 EB2-NIW Curriculum Creator. Todos os direitos reservados.</p>
-  </section>
+
+    <div class="grid cards">
+      <div class="card span6">
+        <div class="kicker">Para quem é</div>
+        <h2>Se você está perdido no “o que provar”</h2>
+        <ul>
+          <li>Quer viajar a turismo e quer um caminho claro: propósito + dinheiro + retorno.</li>
+          <li>Tem medo de travar na entrevista e se contradizer.</li>
+          <li>Quer uma preparação prática (trilha rápida + avançada).</li>
+        </ul>
+      </div>
+      <div class="card span6">
+        <div class="kicker">Para quem NÃO é</div>
+        <h2>Se você procura atalhos errados</h2>
+        <ul>
+          <li>Não é para quem quer “enganar o consulado” ou inventar informações/documentos.</li>
+          <li>Não é um guia para visto de trabalho/estudo. O foco é B1/B2.</li>
+        </ul>
+      </div>
+
+      <div class="card span12" id="conteudo">
+        <span class="badge">O que você vai aprender</span>
+        <h2 style="margin-top:10px">Problema claro → solução simples → ação prática</h2>
+        <ul>
+          <li>Diagnóstico de risco (Verde/Amarelo/Vermelho) para saber o que ajustar antes.</li>
+          <li>Fórmula 1–1–1: 1 frase de contexto + 1 prova + 1 detalhe de retorno (pra responder sem enrolar).</li>
+          <li>Checklist DS-160 para eliminar buracos e contradições.</li>
+          <li>Dossiê enxuto: 12 itens que importam (1 pasta, 3 blocos).</li>
+          <li>Script de 30 segundos + 20 perguntas com respostas-modelo (treino real).</li>
+          <li>Trilhas por perfil: CLT/Servidor, Autônomo/PJ, Estudante, Patrocinado.</li>
+          <li>Pós-entrevista: o que fazer no aprovado, 221(g) e 214(b).</li>
+          <li>Plano final de 7 dias + checklist imprimível.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="grid cards">
+      <div class="card span6">
+        <h2>O que você recebe</h2>
+        <ul>
+          <li>Ebook em PDF (acesso imediato)</li>
+          <li>Checklists e folhas de trabalho imprimíveis</li>
+          <li>Plano final de 7 dias (1h/dia)</li>
+        </ul>
+      </div>
+      <div class="card span6">
+        <h2>O que isso resolve</h2>
+        <ul>
+          <li>Evita o erro nº 1: DS-160 diz uma coisa e você fala outra.</li>
+          <li>Evita resposta longa (que vira contradição).</li>
+          <li>Organiza suas provas para sustentar propósito, dinheiro e retorno.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="card faq">
+      <h2>Perguntas rápidas</h2>
+
+      <details>
+        <summary>Isso garante aprovação?</summary>
+        <p>Não. A decisão é do oficial consular. O objetivo do guia é aumentar clareza e consistência do seu perfil (DS-160 + provas + entrevista) e reduzir erros comuns.</p>
+      </details>
+
+      <details>
+        <summary>Serve para primeira vez?</summary>
+        <p>Sim. O ebook foi desenhado para iniciantes e intermediários, com trilha rápida e trilha por perfil.</p>
+      </details>
+
+      <details>
+        <summary>Sou autônomo/PJ. Ajuda?</summary>
+        <p>Sim. Há uma trilha específica para explicar atividade e estabilidade sem cair no “faço de tudo”.</p>
+      </details>
+
+      <details>
+        <summary>Como recebo o ebook?</summary>
+        <p>Você recebe acesso imediatamente após o pagamento (PDF). A entrega pode ser feita via área de membros/anexo na plataforma.</p>
+      </details>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="card">
+      <span class="badge">Autor</span>
+      <h2 style="margin-top:10px">DIEGO SANCHES | IMIGRAÇÃO</h2>
+      <p class="sub" style="margin:8px 0 0">
+        Contato: <strong>+55 15 93051-0507</strong> • <strong>diego@diegosanches.adv.br</strong> • <strong>@diegosanches.adv.br</strong>
+      </p>
+    </div>
+
+    <p class="footer">
+      Aviso: Este material é educacional e não substitui orientação individual. A decisão do visto é do oficial consular.
+      O objetivo é aumentar a clareza e consistência do seu perfil (DS-160 + provas + entrevista), reduzindo erros e contradições.
+    </p>
+  </div>
+
+  <div class="stickyBar">
+    <div class="stickyInner">
+      <div>
+        <div class="price">Visto Americano B1/B2 Aprovado — Guia Prático</div>
+        <div class="small">Acesso imediato • PDF + imprimíveis • Sem teoria longa</div>
+      </div>
+      <a class="btn btnPrimary" href="SEU_LINK_CHECKOUT_KIWIFY_AQUI" target="_blank" rel="noopener">Comprar agora</a>
+    </div>
+  </div>
+
 </body>
 </html>
